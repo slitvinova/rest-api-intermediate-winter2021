@@ -88,9 +88,9 @@ public class CommonSteps {
         Properties prop = new Properties();
         prop.load(new FileInputStream("src/main/java/resources/data.properties"));
 
-        hashMap.put("Authorization", "token " + prop.getProperty("token"));
+        hashMap.put("Authorization", "Bearer " + prop.getProperty("token"));
         hashMap.put("Content-Type", "application/json");
-        hashMap.put("Accept", "application/vnd.github.v3+json");
+        hashMap.put("Accept", "application/json");
 
         requestSpecification1.headers(hashMap);
         requestSpecification = requestSpecification1;
